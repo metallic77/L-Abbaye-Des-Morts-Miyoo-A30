@@ -21,9 +21,9 @@
 extern SDL_Renderer *renderer;
 
 // Default layout to PSX gamepad with USB adapter
-#define JUMP_JOYBUTTON 2
-#define SELECT_JOYBUTTON 5
-#define START_JOYBUTTON 6
+#define JUMP_JOYBUTTON 1
+#define SELECT_JOYBUTTON 6
+#define START_JOYBUTTON 3
 #define X_JOYAXIS 0
 #define Y_JOYAXIS 1
 

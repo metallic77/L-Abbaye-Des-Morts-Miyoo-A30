@@ -46,12 +46,12 @@ int main (int argc, char** argv) {
 	/* Create renderer (with VSync, nice !) */
 	renderer = SDL_CreateRenderer(screen, -1,
 		SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED | SDL_RENDERER_TARGETTEXTURE);
-	SDL_RenderSetLogicalSize(renderer, SCREEN_W, SCREEN_H);
+	SDL_RenderSetLogicalSize(renderer, 192, 256);
 
 	/* Create a render target for smooth scaling */
 	SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "linear");
 	SDL_Texture *target = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_RGBA8888,
-		SDL_TEXTUREACCESS_TARGET, SCREEN_W, SCREEN_H);
+		SDL_TEXTUREACCESS_TARGET, SCREEN_H, SCREEN_W);
 	SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "nearest");
 	SDL_SetRenderTarget(renderer, target);
 
@@ -179,6 +179,11 @@ void renderpresent(SDL_Renderer *renderer) {
 
 	// replace rendercopy with Ex
 	SDL_RenderCopyEx(renderer, target, NULL, &destRect, 270, NULL, SDL_FLIP_NONE);
-
+//SDL_Rect final_size;
+//final_size.w = 640;
+//final_size.h = 480;
+//final_size.x = 0;
+//final_size.y = 0;
+//SDL_BlitScaled(gradient_surface, NULL, gradient_surface, &final_size);
 	SDL_SetRenderTarget(renderer, target);
 }

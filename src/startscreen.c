@@ -10,8 +10,8 @@ void startscreen(SDL_Window *screen,uint8_t *state,uint8_t *grapset,uint8_t *ful
 	uint8_t musicplay = 0;
     uint8_t change = 1;
 
-	SDL_Rect srcintro = {0,0,SCREEN_W,192};
-	SDL_Rect desintro = {0,0,SCREEN_W,192};
+	SDL_Rect srcintro = {0,0,SCREEN_W,SCREEN_H};
+	SDL_Rect desintro = {0,0,SCREEN_W,SCREEN_H};
 
 	SDL_Event keyp;
 
